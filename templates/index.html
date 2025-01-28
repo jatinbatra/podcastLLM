@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Summarizer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #1c1c1c;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #1DB954;
+        }
+
+        p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 12px;
+            border: 2px solid #1DB954;
+            border-radius: 5px;
+            background: #282828;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #1DB954;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #16a34a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙 Podcast Summarizer</h1>
+        <p>Enter a YouTube Podcast URL and choose your preferred summary type.</p>
+        <form action="/summarize" method="POST">
+            <input type="text" name="youtube_url" placeholder="Paste YouTube URL here" required>
+            
+            <label for="summary_type">Choose summary type:</label>
+            <select name="summary_type">
+                <option value="short">Short & Crisp (1-Min Read)</option>
+                <option value="balanced">Balanced (5-Min Read)</option>
+                <option value="long">Deep Dive (10-Min Read + Analysis)</option>
+                <option value="twitter">Twitter Thread Format</option>
+                <option value="story">News/Magazine Story</option>
+                <option value="academic">Academic Breakdown</option>
+            </select>
+
+            <button type="submit">Summarize</button>
+        </form>
+    </div>
+</body>
+</html>
